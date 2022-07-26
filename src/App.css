@@ -36,3 +36,90 @@
     transform: rotate(360deg);
   }
 }
+
+.main{
+  display: inline;
+  
+}
+.side-bar {
+  float: left;
+  width: 20%;
+}
+.left-sidebar {
+  margin: 20px;
+  padding: 10px;
+  display: block;
+}
+h3, h4, h5{
+  text-align: left;
+}
+.search {
+  width: 100%;
+  margin: 0px auto;
+}
+.search-bar input{
+  width: 50%;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  padding: 12px 20px 12px 40px;
+}
+.main-content {
+  float: left;
+  padding-left: 10px;
+  margin-top: 0px;
+  border-left: 1px solid rgb(110, 110, 110);
+  /* border-top: 1px solid rgb(110, 110, 110); */
+  width: 80%;
+}
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.select-options{
+  text-align: left;
+}
+select {
+  margin-top: 10px;
+  float: left;
+  width: 90%;
+}
+.radio-button {
+  text-align: left;
+}
+.radio-button input[type="radio"]{
+  float: left;
+}
+.radio-button label{
+  float: left;
+}
+.price-filter label{
+  margin-top: 20px;
+  float: left;
+  padding-left: 5px;
+  border-left: 3px solid red;
+}
+.product-filter {
+  padding-left: 5px;
+  border-left: 3px solid red;
+}
+.size-filter {
+  text-align: left;
+}
+.checked-input{
+  margin-top: 10px;
+}
+
+.card-img-top{
+  cursor: pointer;
+}
+
+
+/* media query */
+@media (max-width: 500px) {
+  .side-bar, .main-content {
+    width: 100%;
+    height: auto;
+  }
+}
