@@ -6,7 +6,7 @@ function NavBar(){
         <div className="topnav">
             <Link to="/" className="link">Home</Link>
             <Link to="/cartpage" className="link">Cart</Link>
-            <Link to="/additem" className="link">Add Item To Shop</Link>
+            <Link to="/additem" className="link">Add Item</Link>
         </div>
     )
 }

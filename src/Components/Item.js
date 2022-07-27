@@ -9,7 +9,7 @@ function Item ({apparel}){
     }
     return (
         <div className="card" style={{width: '8 em', margin:10+'px'}}>
-            <img src={apparel.image} className="card-img-top" style={{width: 300+'px', height:300+'px', display:'block'}} onClick={handleImgClick}/>
+            <img src={apparel.image} className="card-img-top" onClick={handleImgClick}/>
             <div className="card-body">
                 <h6 className="card-title">{apparel.apparel_name}</h6>
                 <h6 className="card-title">Ksh {apparel.price} /-</h6>

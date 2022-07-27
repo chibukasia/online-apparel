@@ -7,18 +7,46 @@ import SideBar from "./SideBar";
 
 function Homepage() {
   const [apparels, setApparels] = useState([]);
+  const [search, setSearch] =useState('');
+  const [category, setCategory] = useState('All');
+  const [price, setPrice] = useState(10000);
+  const [gender, setGender] = useState('all');
+  const [size, setSize] = useState([]);
+
   return (
     <div>
       <h1>This is the home page</h1>
       <div className="main">
         <div className="side-bar">
-          <SideBar />
+          <SideBar 
+            apparels={apparels} 
+            setApparels={setApparels}
+            category={category} 
+            setCategory={setCategory}
+            price={price}
+            setPrice={setPrice}
+            gender = {gender}
+            setGender={setGender}
+            size={size}
+            setSize={setSize}
+            />
         </div>
         <div className="main-content">
           <div className="search">
-            <SearchBar />
+            <SearchBar apparels={apparels} 
+              setApparels={setApparels} 
+              search={search} 
+              setSearch={setSearch} 
+              />
           </div>
-          <Collections apparels={apparels} setApparels={setApparels} />
+          <Collections 
+            apparels={apparels} 
+            setApparels={setApparels} 
+            search={search}
+            category={category}
+            price={price}
+            gender={gender}
+            />
         </div>
       </div>
     </div>

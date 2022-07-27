@@ -3,6 +3,9 @@ import React from "react";
 function ProductItem (){
     return (
         <div className="product-item">
+            <div className="product-title">
+                <h2>Product Title</h2>
+            </div>
             <div className="card-item">
                 <div className="image">
                     <img 
