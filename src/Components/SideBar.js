@@ -6,7 +6,7 @@ function SideBar() {
       <h5 className="product-filter">Filter Producst</h5>
       <div className="select-options">
         <label htmlFor="category" className="product-filter">Categories</label><br/>
-        <select name="select" id="category" className="product-filter">
+        <select name="category" id="category" className="product-filter">
           <option value={"All"}>All</option>
           <option value={"T-Shirt"}>T-Shirt</option>
           <option value={"Shirt"}>Shirts</option>

@@ -36,11 +36,35 @@
     transform: rotate(360deg);
   }
 }
+/* Navigation bar */
+.topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+.topnav .link {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.topnav .link:hover {
+  background-color: #ddd;
+  color: black;
+}
+.topnav .link:active {
+  background-color: #04AA6D;
+  color: white;
+}
 
+/* main content */
 .main{
   display: inline;
   
 }
+
+/* Sidebar */
 .side-bar {
   float: left;
   width: 20%;
@@ -50,9 +74,13 @@
   padding: 10px;
   display: block;
 }
+
+/* Headings */
 h3, h4, h5{
   text-align: left;
 }
+
+/* Search bar */
 .search {
   width: 100%;
   margin: 0px auto;
@@ -65,6 +93,7 @@ h3, h4, h5{
   background-color: white;
   padding: 12px 20px 12px 40px;
 }
+/* Collections */
 .main-content {
   float: left;
   padding-left: 10px;
@@ -77,6 +106,8 @@ h3, h4, h5{
   display: flex;
   flex-wrap: wrap;
 }
+
+/* sidebar contents */
 .select-options{
   text-align: left;
 }
@@ -111,8 +142,73 @@ select {
   margin-top: 10px;
 }
 
+/* product crad */
 .card-img-top{
   cursor: pointer;
+}
+
+/* profuct form */
+.add-product {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 50%;
+  margin: 60px auto;
+}
+
+form{
+  text-align: left;
+}
+.add-product input[type=text], input[type=number],select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.add-product input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.add-product input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* cart page */
+.table-content{
+  width: 60%;
+  margin: 60px auto;
+}
+.cart-table {
+  width: 100%;
+}
+.cart-total {
+  width: 70%;
+  margin: 30px auto;
+}
+.cart-total-table{
+  width: 100%;
+}
+tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* footer sections */
+.footer {
+  background-color: #333;
+  /* overflow: hidden; */
+  bottom: 0px;
+  height: 50px;
 }
 
 
@@ -121,5 +217,8 @@ select {
   .side-bar, .main-content {
     width: 100%;
     height: auto;
+  }
+  .add-product {
+    width: 100%;
   }
 }

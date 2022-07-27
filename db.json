@@ -11,7 +11,7 @@
       "in_stock": 5,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors": "red"
     },
     {
       "id": 2,
@@ -24,7 +24,7 @@
       "in_stock": 7,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors":"blue"
     },
     {
       "id": 3,
@@ -37,7 +37,7 @@
       "in_stock": 4,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors":"green"
     },
     {
       "id": 4,
@@ -50,7 +50,7 @@
       "in_stock": 3,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors": "red"
     },
     {
       "id": 5,
@@ -63,7 +63,7 @@
       "in_stock": 0,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors":"blue"
     },
     {
       "id": 6,
@@ -76,7 +76,7 @@
       "in_stock": 10,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors":"green"
     },
     {
       "id": 7,
@@ -89,7 +89,7 @@
       "in_stock": 30,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors":"green"
     },
     {
       "id": 8,
@@ -102,7 +102,7 @@
       "in_stock": 300,
       "rating": 4.5,
       "size": ["XL", "L", "S", "XS"],
-      "colors": ["red", "blue", "green"]
+      "colors":"blue"
     }
   ],
   "cart": []

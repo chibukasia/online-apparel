@@ -3,10 +3,10 @@ import React from "react";
 function CartTotal (){
     return (
         <div className="cart-total">
-            <table>
+            <table className="cart-total-table">
                 <thead>
                     <tr>
-                    <th>Cart Total</th>
+                    <th colSpan={2}>Cart Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -18,7 +18,7 @@ function CartTotal (){
                         <td>Total: </td>
                         <td>1000 </td>
                     </tr>
-                    <tr><td><button>Proceed To Checkout</button></td></tr>
+                    <tr colSpan={2}><td><button>Proceed To Checkout</button></td></tr>
                 </tbody>
             </table>
         </div>
