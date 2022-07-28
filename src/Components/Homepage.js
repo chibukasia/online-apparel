@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import Collections from "./Collections";
 import SideBar from "./SideBar";
 
-function Homepage({apparels, setApparels}) {
+function Homepage({apparels, setApparels, cart, setCart}) {
   //const [apparels, setApparels] = useState([]);
   const [search, setSearch] =useState('');
   const [category, setCategory] = useState('All');
@@ -47,6 +47,8 @@ function Homepage({apparels, setApparels}) {
             category={category}
             price={price}
             gender={gender}
+            cart={cart} 
+            setCart={setCart}
             // inStock={inStock}
             // setInStock= {setInStock}
             />

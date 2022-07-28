@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Item from "./Item";
 
-function Collections({ apparels, setApparels, search, category, price, gender}) {
+function Collections({ apparels, setApparels, search, category, price, gender, cart, setCart}) {
   //fetch apparels
 
   useEffect(() => {
@@ -27,7 +27,7 @@ function Collections({ apparels, setApparels, search, category, price, gender}) 
     })
   const apparaelsList = searchList.map((apparel) => {
     //console.log(apparel.image)
-    return <Item key={apparel.id} apparel={apparel} />;
+    return <Item key={apparel.id} apparel={apparel} cart={cart} setCart={setCart} />;
   });
 
   return <div className="flex-container">{apparaelsList}</div>;

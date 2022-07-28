@@ -11,14 +11,15 @@ import React, {useState} from 'react';
 
 function App() {
   const [apparels, setApparels] = useState([]);
+  const [cart, setCart] = useState([]);
   return (
     <BrowserRouter>
       <div className="App">
         <NavBar />
         
         <Routes>
-          <Route exact path='/' element={<Homepage apparels={apparels} setApparels={setApparels}/>}/>
-          <Route exact path='/cartpage' element={<CartPage />}/>
+          <Route exact path='/' element={<Homepage apparels={apparels} setApparels={setApparels} cart={cart} setCart={setCart}/>}/>
+          <Route exact path='/cartpage' element={<CartPage cart={cart} setCart={setCart}/>}/>
           <Route exact path='/additem' element={<AddNewItemForm apparels={apparels} setApparels={setApparels}/>}/>
           <Route exact path='/product' element={<ProductItem/>} />
         </Routes> 
