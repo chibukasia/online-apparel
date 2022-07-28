@@ -10,7 +10,12 @@
       "gender": "male",
       "in_stock": 5,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
       "colors": "red"
     },
     {
@@ -23,8 +28,13 @@
       "gender": "male",
       "in_stock": 7,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
-      "colors":"blue"
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
+      "colors": "blue"
     },
     {
       "id": 3,
@@ -36,8 +46,13 @@
       "gender": "unisex",
       "in_stock": 4,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
-      "colors":"green"
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
+      "colors": "green"
     },
     {
       "id": 4,
@@ -47,9 +62,14 @@
       "image": "data:image/jpeg;base64,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",
       "category": "Trousers",
       "gender": "female",
-      "in_stock": 3,
+      "in_stock": 0,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
       "colors": "red"
     },
     {
@@ -62,8 +82,13 @@
       "gender": "male",
       "in_stock": 0,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
-      "colors":"blue"
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
+      "colors": "blue"
     },
     {
       "id": 6,
@@ -75,8 +100,13 @@
       "gender": "unisex",
       "in_stock": 10,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
-      "colors":"green"
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
+      "colors": "green"
     },
     {
       "id": 7,
@@ -88,8 +118,13 @@
       "gender": "male",
       "in_stock": 30,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
-      "colors":"green"
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
+      "colors": "green"
     },
     {
       "id": 8,
@@ -101,8 +136,31 @@
       "gender": "female",
       "in_stock": 300,
       "rating": 4.5,
-      "size": ["XL", "L", "S", "XS"],
-      "colors":"blue"
+      "size": [
+        "XL",
+        "L",
+        "S",
+        "XS"
+      ],
+      "colors": "blue"
+    },
+    {
+      "apparel_name": "Checked Red Shirt",
+      "description": "A very nice shirt for work and good outfit",
+      "price": "700",
+      "image": "https://images.dxl.com/is/image/CasualMale/210915_DXL_PLP_Shirts%20Update_3512_SHIRT-3",
+      "category": "Shirts",
+      "gender": "",
+      "in_stock": "5",
+      "rating": "4",
+      "size": [
+        "L",
+        "S",
+        "XL",
+        "XS"
+      ],
+      "color": "#c52626",
+      "id": 9
     }
   ],
   "cart": []

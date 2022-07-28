@@ -5,13 +5,14 @@ import { Link } from "react-router-dom";
 import Collections from "./Collections";
 import SideBar from "./SideBar";
 
-function Homepage() {
-  const [apparels, setApparels] = useState([]);
+function Homepage({apparels, setApparels}) {
+  //const [apparels, setApparels] = useState([]);
   const [search, setSearch] =useState('');
   const [category, setCategory] = useState('All');
   const [price, setPrice] = useState(10000);
   const [gender, setGender] = useState('all');
   const [size, setSize] = useState([]);
+  // const [inStock, setInStock] = useState(true);
 
   return (
     <div>
@@ -46,6 +47,8 @@ function Homepage() {
             category={category}
             price={price}
             gender={gender}
+            // inStock={inStock}
+            // setInStock= {setInStock}
             />
         </div>
       </div>
