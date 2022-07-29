@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import {useNavigate} from "react-router-dom"
 
 function AddNewItemForm ({apparels, setApparels}){
@@ -18,6 +18,7 @@ function AddNewItemForm ({apparels, setApparels}){
     });
 
     const navigate = useNavigate();
+    const form = useRef(null);
     function handleChange(e){
         let name = e.target.name;
         let value = e.target.value;
@@ -47,14 +48,13 @@ function AddNewItemForm ({apparels, setApparels}){
             alert('Product added succesfully')
             navigate('/')
         })
+        form.current.reset()
     }
-
-    console.log(formData);
 
     return (
         <div className="add-product">
             <h2>Add Product To Shop</h2>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} ref={form}>
                 <label htmlFor="fname">Product Name</label>
                 <input type="text" id="name" name="apparel_name" placeholder="Product name.." onChange={handleChange}/>
 
@@ -108,7 +108,7 @@ function AddNewItemForm ({apparels, setApparels}){
                     </div>
                 </div>  
                 <label htmlFor="color">Color</label><br/>
-                <input type="color" id="color" name="color" placeholder="Select color.." onChange={handleChange}/>
+                <input type="color" id="color" name="colors" placeholder="Select color.." onChange={handleChange}/>
             
                 <input type="submit" value="Submit"/>
             </form>

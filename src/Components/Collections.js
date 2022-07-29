@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Item from "./Item";
 
-function Collections({ apparels, setApparels, search, category, price, gender, cart, setCart}) {
+function Collections({ apparels, setApparels, search, category, price, gender, cart, setCart, size}) {
   //fetch apparels
 
   useEffect(() => {
@@ -12,6 +12,16 @@ function Collections({ apparels, setApparels, search, category, price, gender, c
         //console.log(data)
       });
   }, []);
+
+  // fetch items in cart
+  useEffect(()=>{
+    fetch('http://localhost:3000/cart')
+    .then(res=>res.json())
+    .then(data=>{
+      setCart(data);
+    })
+  },[]);
+  
   const searchList = apparels
     .filter((apparel) =>
       apparel.apparel_name.toLowerCase().includes(search.toLowerCase())

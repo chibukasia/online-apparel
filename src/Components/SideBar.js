@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
-function SideBar({apparels, setApparels, setCategory, price, setPrice, setGender, size, setSize}) {
+function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSize}) {
 
   const [isChecked, setIsChecked] = useState(false);
 
@@ -19,22 +19,24 @@ function SideBar({apparels, setApparels, setCategory, price, setPrice, setGender
     setGender(e.target.value);
   }
   
-  // filter products using checkboxes
-  function handleCheckboxClick(){
-    setIsChecked(isChecked=>!isChecked);
-  }
 
-  function handleCheckbox(e){
-    if(isChecked){
-        setSize([...size, e.target.value])
+  // filter products using checkboxes
+  // useEffect(()=>{
+  //   setIsChecked(isChecked=>!isChecked)
+  // },[size])
+
+  function handleCheckboxClick(e){
+    setIsChecked(e.target.checked);
+    if(!isChecked){
+      setSize([...size, e.target.value]);
+      //console.log(size)
     }else{
         const newSizes = size.filter(item=> item !== e.target.value)
         setSize(newSizes)
     } 
   }
-
-  //onsole.log(size)
-
+  //console.log(size)
+  
   //map the categories available
   let categoryNames = [];
   const availableCategories = apparels.forEach(apparel=>{
@@ -63,7 +65,7 @@ function SideBar({apparels, setApparels, setCategory, price, setPrice, setGender
       <div className="price-filter">
         <label htmlFor="customRange1" className="form-label">Filter By Price</label>
         <input type="range" className="form-range" id="customRange1" min="100" max="5000" onChange={handlePriceRange} ></input>
-        <span>PRICE: kSHS 100 - kSHS {price}</span>
+        <span>PRICE: KSHS 100 - KSHS {price}</span>
       </div>
       
       <div className="radio-button" id="gender">
@@ -104,25 +106,25 @@ function SideBar({apparels, setApparels, setCategory, price, setPrice, setGender
         <label htmlFor="size" className="product-filter">Filter By Size</label><br/>
         <div className="checked-input" id="size">
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="XL" id="xlarge" onChange={handleCheckbox} onClick={handleCheckboxClick}/>
+                <input className="form-check-input" type="checkbox" value="XL" id="xlarge" onChange={handleCheckboxClick} checked={isChecked} />
                 <label className="form-check-label" htmlFor="xlarge">
                     XL
                 </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="L" id="large" onChange={handleCheckbox} onClick={handleCheckboxClick}/>
+                <input className="form-check-input" type="checkbox" value="L" id="large" onChange={handleCheckboxClick} />
                 <label className="form-check-label" htmlFor="large">
                     L
                 </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="S" id="small" onChange={handleCheckbox} onClick={handleCheckboxClick}/>
+                <input className="form-check-input" type="checkbox" value="S" id="small" onChange={handleCheckboxClick} />
                 <label className="form-check-label" htmlFor="small">
                     S
                 </label>
             </div>
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="XS" id="xsmall" onChange={handleCheckbox} onClick={handleCheckboxClick}/>
+                <input className="form-check-input" type="checkbox" value="XS" id="xsmall" onChange={handleCheckboxClick} />
                 <label className="form-check-label" htmlFor="xsmall">
                     XS
                 </label>

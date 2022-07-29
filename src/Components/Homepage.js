@@ -49,6 +49,7 @@ function Homepage({apparels, setApparels, cart, setCart}) {
             gender={gender}
             cart={cart} 
             setCart={setCart}
+            size={size}
             // inStock={inStock}
             // setInStock= {setInStock}
             />

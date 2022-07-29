@@ -1,9 +1,61 @@
-import React from "react";
+import React,{useState} from "react";
 
-function CartItem({id, image, name, price, quantity, cart, setCart}) {
+function CartItem({id, image, name, price, quantity, cart, setCart, handleCartUpdate}) {
 
-  const subTotal = price * quantity;
+  const [itemQuantity, setItemQuantity] = useState(quantity);
+  //const newQuantity = quantity + itemQuantity
+  const subTotal = price * itemQuantity;
 
+  // function handleCartUpdate(updatedData){
+  //   const updatedItems = cart.map(item=>{
+  //     if (item.id===updatedData.id){
+  //       return updatedData;
+  //     }else{
+  //       return item;
+  //     }
+  //   })
+
+  //   setCart(updatedItems)
+  // }
+
+  function handleQuantityIncrease(){
+    setItemQuantity ((itemQuantity=> itemQuantity + 1));
+    // update the quantity in database
+    fetch(`http://localhost:3000/cart/${id}`,{
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json'
+      },
+      body: JSON.stringify({
+        quantity: itemQuantity
+      })
+    })
+    .then(res=>res.json())
+    .then(data=>handleCartUpdate(data))
+  }
+
+  // handle decrease in quantity
+  function handleQuantityDecrease(){
+      if (itemQuantity > 0){
+          setItemQuantity ((itemQuantity=> itemQuantity - 1));
+          fetch(`http://localhost:3000/cart/${id}`,{
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
+          },
+          body: JSON.stringify({
+            quantity: itemQuantity
+          })
+        })
+        .then(res=>res.json())
+        .then(data=>handleCartUpdate(data))
+      }
+      
+  }
+
+  console.log(quantity)
   //delete an item from cart
   function handleDelete(){
     if(window.confirm('Are you sure you want to delete '+ name +'from cart?')){
@@ -16,14 +68,21 @@ function CartItem({id, image, name, price, quantity, cart, setCart}) {
     }
     
   }
+
   return (
     <tr>
       <td><button className="remove-item-cart" onClick={handleDelete}>X</button></td>
       <td><img src={image} alt={name} style={{width: 50 +'px', height: 50 + 'px'}}/></td>
       <td>{name}</td>
-      <td>{price}</td>
-      <td>{quantity}</td>
-      <td>KSH {subTotal}</td>
+      <td><span>KSH {price}</span></td>
+      <td>
+      <button type="button" className="btn btn-light" 
+        onClick={handleQuantityDecrease}>-</button>
+        <span>{quantity}</span>
+        <button type="button" className="btn btn-light" 
+        onClick={handleQuantityIncrease}>+</button>
+      </td>
+      <td><span>KSH {subTotal}</span></td>
     </tr>
   );
 }

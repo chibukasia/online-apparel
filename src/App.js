@@ -12,6 +12,19 @@ import React, {useState} from 'react';
 function App() {
   const [apparels, setApparels] = useState([]);
   const [cart, setCart] = useState([]);
+  const [itemQuantity, setItemQuantity] = useState(0);
+
+  function handleQuantityIncrease(){
+    setItemQuantity ((itemQuantity=> itemQuantity + 1));
+  }
+
+  // handle decrease in quantity
+  function handleQuantityDecrease(){
+      if (itemQuantity > 0){
+          setItemQuantity ((itemQuantity=> itemQuantity - 1));
+      }
+      
+  }
   return (
     <BrowserRouter>
       <div className="App">
@@ -19,9 +32,20 @@ function App() {
         
         <Routes>
           <Route exact path='/' element={<Homepage apparels={apparels} setApparels={setApparels} cart={cart} setCart={setCart}/>}/>
-          <Route exact path='/cartpage' element={<CartPage cart={cart} setCart={setCart}/>}/>
+          <Route exact path='/cartpage' 
+            element={<CartPage 
+            cart={cart} 
+            setCart={setCart}
+          />} />
           <Route exact path='/additem' element={<AddNewItemForm apparels={apparels} setApparels={setApparels}/>}/>
-          <Route exact path='/product' element={<ProductItem/>} />
+          <Route exact path='/:id' 
+            element={<ProductItem 
+            cart={cart} 
+            setCart={setCart}
+            itemQuantity={itemQuantity}
+            handleQuantityIncrease={handleQuantityIncrease}
+            handleQuantityDecrease={handleQuantityDecrease}
+            />}  />
         </Routes> 
         {/* <div>
           <Footer />  
