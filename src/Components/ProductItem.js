@@ -141,4 +141,4 @@ const [inStock, setInStock] = useState(true);
     )
 }
 
-export default React.memo(ProductItem);
+export default ProductItem;

@@ -1,25 +1,13 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 
 function CartItem({id, image, name, price, quantity, cart, setCart, handleCartUpdate}) {
-
+  
   const [itemQuantity, setItemQuantity] = useState(quantity);
   //const newQuantity = quantity + itemQuantity
   const subTotal = price * itemQuantity;
 
-  // function handleCartUpdate(updatedData){
-  //   const updatedItems = cart.map(item=>{
-  //     if (item.id===updatedData.id){
-  //       return updatedData;
-  //     }else{
-  //       return item;
-  //     }
-  //   })
-
-  //   setCart(updatedItems)
-  // }
-
   function handleQuantityIncrease(){
-    setItemQuantity ((itemQuantity=> itemQuantity + 1));
+    setItemQuantity ((itemQuantity)=> itemQuantity + 1);
     // update the quantity in database
     fetch(`http://localhost:3000/cart/${id}`,{
       method: 'PATCH',
@@ -32,13 +20,17 @@ function CartItem({id, image, name, price, quantity, cart, setCart, handleCartUp
       })
     })
     .then(res=>res.json())
-    .then(data=>handleCartUpdate(data))
+    .then(data=>{
+      console.log(data)
+      handleCartUpdate(data)
+    }
+    )
   }
 
   // handle decrease in quantity
   function handleQuantityDecrease(){
       if (itemQuantity > 0){
-          setItemQuantity ((itemQuantity=> itemQuantity - 1));
+          setItemQuantity ((itemQuantity)=> itemQuantity - 1);
           fetch(`http://localhost:3000/cart/${id}`,{
           method: 'PATCH',
           headers: {
@@ -50,12 +42,15 @@ function CartItem({id, image, name, price, quantity, cart, setCart, handleCartUp
           })
         })
         .then(res=>res.json())
-        .then(data=>handleCartUpdate(data))
+        .then(data=>{
+          handleCartUpdate(data)})
       }
       
   }
-
-  console.log(quantity)
+  
+  useEffect(()=>{
+    //console.log(itemQuantity)
+  },[itemQuantity])
   //delete an item from cart
   function handleDelete(){
     if(window.confirm('Are you sure you want to delete '+ name +'from cart?')){
@@ -78,7 +73,7 @@ function CartItem({id, image, name, price, quantity, cart, setCart, handleCartUp
       <td>
       <button type="button" className="btn btn-light" 
         onClick={handleQuantityDecrease}>-</button>
-        <span>{quantity}</span>
+        <span>{itemQuantity}</span>
         <button type="button" className="btn btn-light" 
         onClick={handleQuantityIncrease}>+</button>
       </td>
