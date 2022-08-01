@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSize, setIsChecked}) {
 
