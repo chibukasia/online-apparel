@@ -17,7 +17,7 @@ function Homepage({apparels, setApparels, cart, setCart}) {
 
   return (
     <div>
-      <h1>This is the home page</h1>
+      <h1>Welcome to online apparel shop</h1>
       <div className="main">
         <div className="side-bar">
           <SideBar 
