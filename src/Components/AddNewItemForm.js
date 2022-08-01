@@ -14,7 +14,7 @@ function AddNewItemForm ({apparels, setApparels}){
         in_stock: 0,
         rating: 0,
         size: [],
-        color: '',
+        colors: '',
     });
 
     const navigate = useNavigate();
@@ -26,6 +26,10 @@ function AddNewItemForm ({apparels, setApparels}){
         if (name==='size'){
             setFormData({...formData,[name]: [...formData.size, value]})
         }else if(name==='price'){
+            setFormData({...formData, [name]:parseInt(value, 10)})
+        }else if(name==='in_stock'){
+            setFormData({...formData, [name]:parseInt(value, 10)})
+        }else if(name==='rating'){
             setFormData({...formData, [name]:parseInt(value, 10)})
         }else{
             setFormData({...formData, [name]: value})
@@ -51,7 +55,7 @@ function AddNewItemForm ({apparels, setApparels}){
         })
         form.current.reset()
     }
-    
+
     return (
         <div className="add-product">
             <h2>Add Product To Shop</h2>
