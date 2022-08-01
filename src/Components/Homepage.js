@@ -12,6 +12,7 @@ function Homepage({apparels, setApparels, cart, setCart}) {
   const [price, setPrice] = useState(10000);
   const [gender, setGender] = useState('all');
   const [size, setSize] = useState([]);
+  const [isChecked, setIsChecked] = useState(false);
   // const [inStock, setInStock] = useState(true);
 
   return (
@@ -30,6 +31,8 @@ function Homepage({apparels, setApparels, cart, setCart}) {
             setGender={setGender}
             size={size}
             setSize={setSize}
+            isChecked={isChecked}
+            setIsChecked={setIsChecked}
             />
         </div>
         <div className="main-content">
@@ -50,6 +53,7 @@ function Homepage({apparels, setApparels, cart, setCart}) {
             cart={cart} 
             setCart={setCart}
             size={size}
+            isChecked={isChecked}
             // inStock={inStock}
             // setInStock= {setInStock}
             />

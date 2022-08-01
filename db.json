@@ -13,9 +13,7 @@
       "quantity": 1,
       "size": [
         "XL",
-        "L",
-        "S",
-        "XS"
+        "L"
       ],
       "colors": "#000080"
     },
@@ -32,9 +30,7 @@
       "quantity": 1,
       "size": [
         "XL",
-        "L",
-        "S",
-        "XS"
+        "L"
       ],
       "colors": "blue"
     },
@@ -52,8 +48,7 @@
       "size": [
         "XL",
         "L",
-        "S",
-        "XS"
+        "S"
       ],
       "colors": "#54542C"
     },
@@ -70,9 +65,7 @@
       "quantity": 1,
       "size": [
         "XL",
-        "L",
-        "S",
-        "XS"
+        "L"
       ],
       "colors": "black"
     },
@@ -90,8 +83,7 @@
       "size": [
         "XL",
         "L",
-        "S",
-        "XS"
+        "S"
       ],
       "colors": "grey"
     },
@@ -127,9 +119,7 @@
       "quantity": 1,
       "size": [
         "XL",
-        "L",
-        "S",
-        "XS"
+        "L"
       ],
       "colors": "#B2D4E6"
     },
@@ -147,8 +137,7 @@
       "size": [
         "XL",
         "L",
-        "S",
-        "XS"
+        "S"
       ],
       "colors": "#F57069"
     },
@@ -163,9 +152,9 @@
       "rating": "4",
       "quantity": 1,
       "size": [
+        "XL",
         "L",
         "S",
-        "XL",
         "XS"
       ],
       "colors": "#c52626",
@@ -181,8 +170,6 @@
       "in_stock": "5",
       "rating": "4",
       "size": [
-        "XL",
-        "XL",
         "S",
         "XS"
       ],

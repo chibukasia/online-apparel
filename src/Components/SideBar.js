@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSize}) {
+function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSize, setIsChecked}) {
 
   // filter products by category
   function handleCategory(e){
@@ -21,7 +21,7 @@ function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSi
     // setIsChecked(e.target.checked);
     // setIsChecked(checkRef.current.checked);
     let check = e.target.checked;
-
+    setIsChecked(check)
     if(check){
       setSize([...size, e.target.value]);
       //console.log(size)
