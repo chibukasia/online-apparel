@@ -56,28 +56,28 @@ function AddNewItemForm ({apparels, setApparels}){
             <h2>Add Product To Shop</h2>
             <form onSubmit={handleSubmit} ref={form}>
                 <label htmlFor="fname">Product Name</label>
-                <input type="text" id="name" name="apparel_name" placeholder="Product name.." onChange={handleChange}/>
+                <input type="text" id="name" name="apparel_name" placeholder="Product name.." onChange={handleChange} required/>
 
                 <label htmlFor="desc">Description</label>
-                <input type="text" id="desc" name="description" placeholder="Describe the product.." onChange={handleChange}/>
+                <input type="text" id="desc" name="description" placeholder="Describe the product.." onChange={handleChange} required/>
                 <label htmlFor="price">Price</label>
-                <input type="number" id="price" name="price" placeholder="Enter product price.." onChange={handleChange}/>
+                <input type="number" id="price" name="price" placeholder="Enter product price.." onChange={handleChange} required/>
                 <label htmlFor="image">Image Url</label>
-                <input type="text" id="image" name="image" placeholder="Enter image url.." onChange={handleChange}/>
+                <input type="text" id="image" name="image" placeholder="Enter image url.." onChange={handleChange} required/>
 
                 <label htmlFor="category">Category</label>
-                <input type="text" id="category" name="category" placeholder="Eg Jackest, Trousers, Hoods, Shirts, Dresses.." onChange={handleChange}/>
+                <input type="text" id="category" name="category" placeholder="Eg Jackest, Trousers, Hoods, Shirts, Dresses.." onChange={handleChange} required/>
                 <label htmlFor="category">Gender and Age</label>
-                <select id="gender" name="gender" className="product-filter" onChange={handleChange}>
+                <select id="gender" name="gender" className="product-filter" onChange={handleChange} required>
                     <option value={"male"}>Male</option>
                     <option value={"female"}>Female</option>
                     <option value={"children"}>Chilren</option>
                     <option value={"unisex"}>Unisex</option>
                 </select><br/>
                 <label htmlFor="stock">Quantiry</label>
-                <input type="number" id="stock" name="in_stock" placeholder="Enter product quantity.." onChange={handleChange}/>
+                <input type="number" id="stock" name="in_stock" placeholder="Enter product quantity.." onChange={handleChange} required/>
                 <label htmlFor="rating">Rating</label>
-                <input type="number" id="rating" name="rating" placeholder="Enter product rating.." onChange={handleChange}/>
+                <input type="number" id="rating" name="rating" placeholder="Enter product rating.." onChange={handleChange} required/>
                 <div className="size-filter">
                     <label htmlFor="size" className="product-filter">Select Size</label><br/>
                     <div className="checked-input" id="size">
@@ -108,7 +108,7 @@ function AddNewItemForm ({apparels, setApparels}){
                     </div>
                 </div>  
                 <label htmlFor="color">Color</label><br/>
-                <input type="color" id="color" name="colors" placeholder="Select color.." onChange={handleChange}/>
+                <input type="color" id="color" name="colors" placeholder="Select color.." onChange={handleChange} required/>
             
                 <input type="submit" value="Submit"/>
             </form>

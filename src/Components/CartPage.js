@@ -23,8 +23,9 @@ function CartPage({cart, setCart}) {
       }
     })
 
-    setCart(updatedItems)
+    setCart(updatedItems);
   }
+  
   //loop through items in cart to display each item
   const cartList = cart.map(item=>{
     return <CartItem 

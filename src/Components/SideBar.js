@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSize}) {
-
-  const [isChecked, setIsChecked] = useState(false);
 
   // filter products by category
   function handleCategory(e){
@@ -18,16 +16,13 @@ function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSi
   function handleRadioSelection(e){
     setGender(e.target.value);
   }
-  
-
-  // filter products using checkboxes
-  // useEffect(()=>{
-  //   setIsChecked(isChecked=>!isChecked)
-  // },[size])
 
   function handleCheckboxClick(e){
-    setIsChecked(e.target.checked);
-    if(!isChecked){
+    // setIsChecked(e.target.checked);
+    // setIsChecked(checkRef.current.checked);
+    let check = e.target.checked;
+
+    if(check){
       setSize([...size, e.target.value]);
       //console.log(size)
     }else{
@@ -35,8 +30,7 @@ function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSi
         setSize(newSizes)
     } 
   }
-  //console.log(size)
-  
+
   //map the categories available
   let categoryNames = [];
   const availableCategories = apparels.forEach(apparel=>{
@@ -106,7 +100,7 @@ function SideBar({apparels, setCategory, price, setPrice, setGender, size, setSi
         <label htmlFor="size" className="product-filter">Filter By Size</label><br/>
         <div className="checked-input" id="size">
             <div className="form-check">
-                <input className="form-check-input" type="checkbox" value="XL" id="xlarge" onChange={handleCheckboxClick} checked={isChecked} />
+                <input className="form-check-input" type="checkbox" value="XL" id="xlarge" onChange={handleCheckboxClick} />
                 <label className="form-check-label" htmlFor="xlarge">
                     XL
                 </label>

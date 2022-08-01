@@ -22,7 +22,7 @@ function Collections({ apparels, setApparels, search, category, price, gender, c
     })
   },[]);
   
-  const searchList = apparels
+  const filterList = apparels
     .filter((apparel) =>
       apparel.apparel_name.toLowerCase().includes(search.toLowerCase())
     )
@@ -35,7 +35,10 @@ function Collections({ apparels, setApparels, search, category, price, gender, c
         if (gender === 'all') return true
         return apparel.gender === gender;
     })
-  const apparaelsList = searchList.map((apparel) => {
+    const diff= apparels.filter(apparel=>apparel.size.filter(item=>size.includes(item)))
+    console.log(diff)
+
+  const apparaelsList = filterList.map((apparel) => {
     //console.log(apparel.image)
     return <Item key={apparel.id} apparel={apparel} cart={cart} setCart={setCart} />;
   });
